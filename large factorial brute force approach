@@ -1,0 +1,26 @@
+#define m 10000000007
+
+class Solution{
+public:
+long long  findfactorial(long long  N)
+{
+    long long help;
+    if(N==1||N==0){
+        return 1;
+    }
+    help= N*findfactorial(N-1);
+    return help;
+    
+}
+    vector<long long> factorial(vector<long long> a, int n) {
+        vector<long long> ans;
+        long long  temp;
+        for(int i=0; i<n; i++){
+            temp=findfactorial(a[i]);
+            temp=temp%m;
+            ans.push_back(temp);
+            
+        }
+        return ans;
+    }
+};
